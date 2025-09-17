@@ -64,18 +64,24 @@ public class SimpleIOMath {
     /**
      * Summarize the conversation
      */
-    public void printInfo() {
-        // TODO figure out a way to add a pause before sending each message in here
+    public void printInfo() throws InterruptedException {
+        Thread.sleep(500);
         System.out.println("I'm gonna teach you how to sing it out");
         System.out.println("Come on, come on, come on");
         System.out.println("Let me tell you what it's all about");
         System.out.println("Reading, writing, arithmetic");
         System.out.println("Are the branches of the learning tree");
+        Thread.sleep(4500);
         System.out.println("Your name is: "+name);
+        Thread.sleep(1000);
         System.out.println("Your age is: "+age);
+        Thread.sleep(1000);
         System.out.println("At your next birthday, you will turn "+(age+1));
+        Thread.sleep(1000);
         System.out.println("The first prime factor of "+age+" is: "+firstPrimeFactor());
+        Thread.sleep(1000);
         System.out.println("Your favorite number is: "+favNumber);
+        Thread.sleep(1000);
         System.out.println("Your favorite number squared is: "+(int)(Math.pow(favNumber,2)));
     }
 
@@ -83,13 +89,12 @@ public class SimpleIOMath {
      * Main method for class SimpleIOMath
      * @param args command line arguments, if needed
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         SimpleIOMath app = new SimpleIOMath();
         System.out.println("* Sit yourself down, take a seat *");
         System.out.println("* All you gotta do is repeat after me *");
         app.promptUser();
         app.printInfo();
         System.out.println("* end of program *");
-
     }
 }
