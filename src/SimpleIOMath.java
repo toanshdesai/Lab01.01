@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * Asks the user questions,
+ * Asks the user questions, does some math, prints out some cool facts and lyrics
  * @version 09/17/2025
  * @author toanshdesai
  * Flint session here: https://app.flintk12.com/chats/2dc3a1b4-dd8b-4602-8c22-fd8936b52337
@@ -25,6 +25,10 @@ public class SimpleIOMath {
             try {
                 System.out.print("Question 2: How old are you? ");
                 age = Integer.parseInt(in2.nextLine().replaceAll("\\s+",""));
+                if (age<=0){
+                    System.out.println("Invalid input");
+                    continue;
+                }
                 break;
             }
             catch (Exception e) {
