@@ -4,7 +4,7 @@ import java.util.Scanner;
  * Asks the user questions,
  * @version 09/17/2025
  * @author toanshdesai
- * Flint session here:
+ * Flint session here: https://app.flintk12.com/chats/2dc3a1b4-dd8b-4602-8c22-fd8936b52337
  */
 public class SimpleIOMath {
     private String name;
@@ -21,13 +21,26 @@ public class SimpleIOMath {
         System.out.print("Question 1: What is your name? ");
         name = in.nextLine();
 
-        // TODO: Make sure to include a try/catch for age
-        System.out.print("Question 2: How old are you? ");
-        age = in2.nextInt();
-
-        // TODO: Make sure to include a try/catch for fav number
-        System.out.print("Question 3: What is your favorite number? ");
-        favNumber = in3.nextInt();
+        while (true) {
+            try {
+                System.out.print("Question 2: How old are you? ");
+                age = Integer.parseInt(in2.nextLine().replaceAll("\\s+",""));
+                break;
+            }
+            catch (Exception e) {
+                System.out.println("Invalid input");
+            }
+        }
+        while (true) {
+            try {
+                System.out.print("Question 3: What is your favorite number? ");
+                favNumber = Integer.parseInt(in3.nextLine().replaceAll("\\s+",""));
+                break;
+            }
+            catch (Exception e) {
+                System.out.println("Invalid input");
+            }
+        }
     }
 
     private boolean isPrime(int n) {
@@ -52,11 +65,12 @@ public class SimpleIOMath {
      * Summarize the conversation
      */
     public void printInfo() {
-        System.out.println("I'm gonna teach you how to sing it out\n" +
-                "Come on, come on, come on\n" +
-                "Let me tell you what it's all about\n" +
-                "Reading, writing, arithmetic\n" +
-                "Are the branches of the learning tree");
+        // TODO figure out a way to add a pause before sending each message in here
+        System.out.println("I'm gonna teach you how to sing it out");
+        System.out.println("Come on, come on, come on");
+        System.out.println("Let me tell you what it's all about");
+        System.out.println("Reading, writing, arithmetic");
+        System.out.println("Are the branches of the learning tree");
         System.out.println("Your name is: "+name);
         System.out.println("Your age is: "+age);
         System.out.println("At your next birthday, you will turn "+(age+1));
